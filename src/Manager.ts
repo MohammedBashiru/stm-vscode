@@ -3,16 +3,10 @@ import * as path from "path";
 import * as fs from "fs";
 import axios from "axios";
 const userHomeDir = require("os").homedir();
+import { API_URL } from "./config";
 
 import { getAuthPage_html } from "./Webviews/getAuthPage";
 import { getAddTaskPage_html } from "./Webviews/getAddTaskPage";
-import { rejects } from "assert";
-
-const cats = {
-  "Coding Cat": "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
-  "Compiling Cat": "https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif",
-  "Testing Cat": "https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif"
-};
 
 /**
  * Manage STM WebView
@@ -92,7 +86,6 @@ export class STMPanel {
 
   private createTask(taskData: any) {
     return new Promise(resolve => {
-      const url = "http://dev.stm.com/api/request/request.php";
       const requestData = {
         ...taskData
       };
@@ -101,14 +94,11 @@ export class STMPanel {
         Authorization: `Basic ${this._userCreds["username"]}:${this._userCreds["password"]}`
       };
 
-      console.log("requestData", requestData);
-      console.log("requestHeaders", requestHeaders);
       axios
-        .post(url, requestData, {
+        .post(API_URL, requestData, {
           headers: requestHeaders
         })
         .then(res => {
-          console.log("resp", res);
           this._panel.webview.postMessage({ command: "success" });
           vscode.window.showInformationMessage("Task Created Successful");
           resolve(res.data);

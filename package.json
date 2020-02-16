@@ -30,26 +30,39 @@
     "Other"
   ],
   "activationEvents": [
+    "*",
     "onCommand:extension.stm",
-    "onWebviewPanel:stmTaskManager"
+    "onWebviewPanel:stmTaskManager",
+    "onWebviewPanel:stmTaskConfig",
+    "onView:stmTreeView",
+    "onView:stmTreeDetails",
+    "onView:stmTreeWeekly"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.stm",
+        "command": "extension.stmConfigureAuth",
         "title": "Syncline Task Manager",
         "icon": {
-          "light": "media/command.png",
-          "dark": "media/command.png"
+          "light": "https://github.com/MohammedBashiru/stm-vscode/blob/master/media/command.png",
+          "dark": "https://github.com/MohammedBashiru/stm-vscode/blob/master/media/command.png"
         }
       },
       {
-        "command": "extension.add",
+        "command": "extension.stmAddTask",
         "title": "Add Task",
         "icon": {
-          "light": "media/command.png",
-          "dark": "media/command.png"
+          "light": "https://github.com/MohammedBashiru/stm-vscode/blob/master/media/command.png",
+          "dark": "https://github.com/MohammedBashiru/stm-vscode/blob/master/media/command.png"
+        }
+      },
+      {
+        "command": "stmTreeWeekly.refreshEntry",
+        "title": "Refresh",
+        "icon": {
+          "light": "media/light/refresh.svg",
+          "dark": "media/dark/refresh.svg"
         }
       }
     ],
@@ -57,26 +70,36 @@
       "activitybar": [
         {
           "id": "stm-drawer",
-          "title": "STM Task Manager",
-          "icon": "media/logo.png"
+          "title": "Task Manager",
+          "icon": "media/tasks.png"
         }
       ]
     },
     "views": {
       "stm-drawer": [
         {
-          "id": "stm.views.authSettings",
-          "name": "Configure Auth",
-          "when": "stm:authExplorerEnabled && config.stm.auth.enabled"
+          "id": "stmTreeView",
+          "name": "Master"
         },
         {
-          "id": "stm.views.addTaskTreeView",
-          "name": "Add Task",
-          "when": "stm:addExplorerEnabled && config.stm.add.enabled"
+          "id": "stmTreeWeekly",
+          "name": "This Week"
+        },
+        {
+          "id": "stmTreeDetails",
+          "name": "Details"
         }
       ]
     },
-    "menus": {}
+    "menus": {
+      "view/title": [
+        {
+          "command": "stmTreeWeekly.refreshEntry",
+          "when": "view == stmTreeWeekly",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -100,6 +123,7 @@
     "vscode-test": "^1.3.0"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "date-fns": "^2.0.0-alpha.7"
   }
 }
