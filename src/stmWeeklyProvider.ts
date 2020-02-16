@@ -56,7 +56,7 @@ export class StmWeeklyProvider
                 );
 
                 statusBarItem.text = `$(tasklist) Task Manager: ${userInfo["username"]}`;
-                statusBarItem.command = "extension.add";
+                statusBarItem.command = "extension.stmAddTask";
                 statusBarItem.show();
 
                 if (userInfo["username"] && userInfo["password"]) {

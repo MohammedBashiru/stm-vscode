@@ -133,7 +133,7 @@ export class STMPanel {
                 1000
               );
               statusBarItem.text = `$(tasklist) Task Manager: ${userInfo["username"]}`;
-              statusBarItem.command = "extension.add";
+              statusBarItem.command = "extension.stmAddTask";
               statusBarItem.show();
               this._getAddTaskWebView();
             } else {
