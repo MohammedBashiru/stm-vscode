@@ -1,0 +1,274 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --dark: #1e1e1e;
+  --gray: #3d3d3d;
+  --white: #bfbfbf;
+  --blue: dodgerblue;
+  --dark-blue: rgb(8, 87, 165);
+}
+
+body {
+  background-color: var(--dark);
+}
+
+/* LOGIN PAGE */
+.login-form {
+  background-color: var(--dark);
+  display: flex;
+  flex-flow: wrap column;
+}
+
+.login-form h1 {
+  padding: 20px 0px 0px 20px;
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+.login-form p {
+  padding-left: 20px;
+  color: var(--white);
+  font-size: 0.745rem;
+}
+
+.login-form .form-control {
+  flex: 1;
+  margin: 20px;
+}
+
+.login-form .form-control label {
+  display: block;
+}
+
+.login-form .form-control label {
+  font-size: 0.879rem;
+  color: var(--white);
+}
+
+.login-form .form-control label::after {
+  content: " *";
+  color: red;
+}
+
+.login-form .form-control input {
+  height: 30px;
+  width: 300px;
+  font-size: 0.792rem;
+  border: 1px solid var(--dark);
+  background-color: var(--gray);
+  color: var(--white);
+  padding-left: 10px;
+}
+
+.login-form .form-control button {
+  width: 130px;
+  height: 35px;
+  border: 1px solid var(--dark);
+  background-color: var(--blue);
+  border-radius: 5px;
+}
+
+.login-form .form-control button:hover {
+  cursor: pointer;
+  background-color: var(--dark-blue);
+}
+
+/* ADD TASK */
+.task-entry {
+  color: black;
+  padding: 20px;
+  border-radius: 3px;
+  margin: 10px;
+  width: 50%;
+  overflow-x: scroll;
+  position: relative;
+}
+
+.task-entry h1 {
+  color: var(--white);
+  font-size: 1.3rem;
+}
+.task-entry p {
+  color: var(--white);
+  font-size: 0.745rem;
+}
+
+.task-entry .task-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 10px;
+}
+
+.task-entry .task-wrapper .task-header {
+  flex: 1;
+  height: 30px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.task-entry .task-wrapper .icon {
+  font-size: 1.3rem;
+}
+
+.task-entry .task-wrapper .icon:hover {
+  cursor: pointer;
+}
+
+.task-entry .task-wrapper .icon:hover i {
+  color: white;
+}
+
+.task-entry .task-wrapper .icon i {
+  color: var(--white);
+}
+
+.task-entry .task-wrapper .task-header p {
+  /* color: dodgerblue; */
+  font-size: 0.897rem;
+  margin-right: auto;
+}
+
+.task-entry .task-wrapper .main-task {
+  flex: 1;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.task-entry .task-wrapper .main-task .icon {
+  margin-right: 10px;
+}
+
+.task-entry .task-wrapper .main-task .icon i {
+  color: var(--white);
+  font-size: 0.948rem;
+}
+
+.task-entry .task-wrapper .main-task .form-control {
+  display: flex;
+  flex-flow: column;
+  flex: 8;
+}
+
+.task-entry .task-wrapper .main-task .form-control input {
+  color: white;
+  height: 30px;
+  width: 100%;
+  padding-left: 5px;
+  background-color: var(--gray);
+  border: 1px solid var(--gray);
+}
+
+.task-entry .task-wrapper .content {
+  flex: 1;
+}
+
+.task-entry .task-wrapper .content .task-manager {
+  display: flex;
+  flex-flow: column wrap;
+  list-style: none;
+  width: 100%;
+}
+
+.task-entry .task-wrapper .content .task-manager .task {
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+}
+
+.task-entry .task-wrapper .content .task-manager .task .icon {
+  margin-right: 10px;
+}
+
+.task-entry .task-wrapper .content .task-manager .task .icon:hover {
+  cursor: pointer;
+}
+
+.task-entry .task-wrapper .content .task-manager .task .icon i {
+  color: red;
+  font-size: 0.948rem;
+}
+
+.task-entry .task-wrapper .content .task-manager .input {
+  flex: 8;
+}
+.task-entry .task-wrapper .content .task-manager .input textarea {
+  height: 30px;
+  width: 100%;
+  background-color: var(--gray);
+  border: 1px solid var(--gray);
+  color: white;
+  padding: 5px;
+  font-size: 0.785rem;
+  resize: vertical;
+}
+
+.task-entry .task-wrapper .form-action {
+  flex: 1;
+}
+
+.task-entry .task-wrapper .form-action button {
+  width: 100px;
+  height: 30px;
+  border: 1px solid var(--dark);
+  background-color: var(--blue);
+  border-radius: 2px;
+  margin-left: auto;
+  display: block;
+}
+
+.task-entry .task-wrapper .form-action button:hover {
+  cursor: pointer;
+  background-color: var(--dark-blue);
+}
+
+button.disabled {
+  background-color: var(--gray) !important;
+  pointer-events: none !important;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  opacity: 0.3;
+}
+.loader {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 40%;
+  right: 40%;
+}
+
+.overlay.hide {
+  display: none;
+}
+.loader.hide {
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

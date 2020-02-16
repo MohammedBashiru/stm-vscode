@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ba1b5d3d86.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../media/style.css" />
+    <title>Add Task</title>
+  </head>
+
+  <body>
+    <div class="task-entry">
+      <h1 id="welcome">Add Task</h1>
+      <div class="task-wrapper">
+        <div class="task-header">
+            <p>Adding task made simple</p>
+            <div class="icon" title="Add More Task" id="addMore">
+                <span><i class="fa fa-plus-square"></i></span>
+            </div>
+        </div>
+        <div class="main-task">
+            <div class="icon">
+              <span><i class="fa fa-calendar-alt"></i></span>
+            </div>
+            <div class="form-control">
+                <input id="date" type="date" name="date" value=""></input>
+            </div>
+        </div>
+        <div class="content">
+          <ul class="task-manager">
+            <li class="task">
+              <div class="icon">
+                <span><i class="fa fa-trash-alt"></i></span>
+              </div>
+              <div class="input">
+                <textarea name="taskfield" cols="30" rows="2" value=""></textarea>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="form-action">
+          <button type="button" id="createTask" class="disabled">Create Task</button>
+        </div>
+      </div>
+      <div class="loader hide"></div>
+      <div class="overlay hide"></div>
+    </div>
+
+    <script nonce="${nonce}" src="../media/main.js"></script>
+  </body>
+</html>
