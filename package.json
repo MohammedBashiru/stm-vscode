@@ -7,9 +7,18 @@
     "stm",
     "task manager"
   ],
+  "homepage": "https://github.com/MohammedBashiru/stm-vscode/blob/master/README.md",
+  "bugs": {
+    "url": "https://github.com/MohammedBashiru/stm-vscode/issues",
+    "email": "smcbreen@microsoft.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MohammedBashiru/stm-vscode.git"
+  },
   "publisher": "Mohammed Bashiru",
   "version": "0.0.1",
-  "icon": "media/logo.png",
+  "icon": "https://github.com/MohammedBashiru/stm-vscode/blob/master/media/logo.png",
   "galleryBanner": {
     "color": "#c5ddff",
     "theme": "light"
@@ -21,14 +30,27 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.stm"
+    "onCommand:extension.stm",
+    "onWebviewPanel:stmTaskManager"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "extension.stm",
-        "title": "Syncline Task Manager"
+        "title": "Syncline Task Manager",
+        "icon": {
+          "light": "media/command.png",
+          "dark": "media/command.png"
+        }
+      },
+      {
+        "command": "extension.add",
+        "title": "Add Task",
+        "icon": {
+          "light": "media/command.png",
+          "dark": "media/command.png"
+        }
       }
     ],
     "viewsContainers": {

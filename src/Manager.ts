@@ -142,8 +142,8 @@ export class STMPanel {
                 vscode.StatusBarAlignment.Right,
                 1000
               );
-              statusBarItem.text = `${gripper} Task Manager: ${userInfo["username"]}`;
-              statusBarItem.command = "extension.stm";
+              statusBarItem.text = `$(tasklist) Task Manager: ${userInfo["username"]}`;
+              statusBarItem.command = "extension.add";
               statusBarItem.show();
               this._getAddTaskWebView();
             } else {

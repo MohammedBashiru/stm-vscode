@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(
-    vscode.commands.registerCommand("stm.start", () => {
+    vscode.commands.registerCommand("stm.add", () => {
       STMPanel.createOrShow(context.extensionPath);
     })
   );
