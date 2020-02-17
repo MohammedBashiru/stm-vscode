@@ -124,6 +124,6 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "date-fns": "^2.0.0-alpha.7"
+    "moment": "^2.24.0"
   }
 }

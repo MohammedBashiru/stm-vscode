@@ -2,9 +2,9 @@ import * as vscode from "vscode";
 import * as fs from "fs";
 import * as path from "path";
 import axios from "axios";
-const userHomeDir = require("os").homedir();
-import { format } from "date-fns";
 import { API_URL } from "./config";
+import * as moment from "moment";
+const userHomeDir = require("os").homedir();
 
 export class StmWeeklyProvider
   implements vscode.TreeDataProvider<STMWeeklyTreeItem> {
@@ -76,9 +76,8 @@ export class StmWeeklyProvider
                         tasks.map(
                           (task: any) =>
                             new STMWeeklyTreeItem(
-                              `${format(
-                                new Date(task.created_on),
-                                "ddd do MMM"
+                              `${moment(task.created_on).format(
+                                "ddd Do MMM"
                               )}: ${task.task}`,
                               0,
                               task.task
