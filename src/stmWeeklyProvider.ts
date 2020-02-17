@@ -19,7 +19,6 @@ export class StmWeeklyProvider
   constructor() {}
 
   refresh(): void {
-    console.log("refresh called");
     this._onDidChangeTreeData.fire();
   }
 
@@ -32,7 +31,6 @@ export class StmWeeklyProvider
   }
 
   getChildren(element?: STMWeeklyTreeItem): Thenable<STMWeeklyTreeItem[]> {
-    console.log("get children weekly");
     return new Promise(resolve => {
       fs.readFile(`${userHomeDir}/.stm-config.json`, "utf8", err => {
         if (err) {

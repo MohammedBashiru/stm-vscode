@@ -38,9 +38,12 @@ export class STMPanel {
     // Update the content based on view changes
     this._panel.onDidChangeViewState(
       e => {
-        console.log("panel did change view state");
         if (this._panel.visible) {
-          this._getAuthLoginWebView();
+          if (this._panel.title === "Password Authentication") {
+            this._getAuthLoginWebView();
+          } else {
+            this._getAddTaskWebView();
+          }
         }
       },
       null,
