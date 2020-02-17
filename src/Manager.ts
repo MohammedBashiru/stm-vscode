@@ -94,7 +94,7 @@ export class STMPanel {
       };
       const requestHeaders = {
         "Content-Type": "application/json",
-        Authorization: `Basic ${this._userCreds["username"]}:${this._userCreds["password"]}`
+        "Custom-Auth": `Basic ${this._userCreds["username"]}:${this._userCreds["password"]}`
       };
 
       axios
